@@ -13,9 +13,12 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: 3.8
-    - name: Install dependencies
+    - name: Install dependencies for tensorflow
       run: |
-        make install
+        make install_tf
+    - name: Install dependecies for pytorch
+      run: |
+        make install_pytor
     - name: Lint with pylint
       run: |
         make lint
