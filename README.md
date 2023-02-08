@@ -19,7 +19,9 @@ FeaturesDict({
 })
 ```
 
-Where image field contains the Image itself, the image/filename contains the image filename and the label contains 38 different categories.
+Where image field contains the Image itself, the image/filename contains the image filename and the label contains 38 different categories. 
+
+[Overview](https://github.com/punkmic/Image-Classification-using-AWS-SageMaker/blob/master/images/plants.PNG)
 
 For more information see: [An open access repository of images on plant health to enable the development of mobile disease diagnostics](https://arxiv.org/abs/1511.08060).
 
