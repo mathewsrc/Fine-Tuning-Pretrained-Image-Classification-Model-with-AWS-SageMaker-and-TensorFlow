@@ -16,7 +16,7 @@ The PlantVillage dataset consists of 54303 images of healthy and unhealthy leave
     'image/filename': Text(shape=(), dtype=string),
     'label': ClassLabel(shape=(), dtype=int64, num_classes=38),
 })
-´´´
+```
 
 Where image field contains the Image itself, the image/filename contains the image filename and the label contains 38 different categories.
 
