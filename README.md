@@ -11,7 +11,7 @@ Use AWS SageMaker to finetune a pretrained model that can perform image classifi
 
 The PlantVillage dataset consists of 54303 images of healthy and unhealthy leaves, divided into 38 categories by species and disease. This dataset data is structure as follows:
 
-´´´ FeaturesDict({
+``` FeaturesDict({
     'image': Image(shape=(None, None, 3), dtype=uint8),
     'image/filename': Text(shape=(), dtype=string),
     'label': ClassLabel(shape=(), dtype=int64, num_classes=38),
