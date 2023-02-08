@@ -1,9 +1,12 @@
 setup:
 	python -m venv ./.env
 
+source:
+	source .env/Scripts/activate
+
 install:
 	pip install --upgrade pip &&\
-		python install -r requirements.txt
+		pip install -r requirements.txt
 
 format:
 	black *.py

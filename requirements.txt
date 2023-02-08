@@ -1,5 +1,5 @@
 tensorflow
 smdebug
-matplolib
+matplotlib
 numpy
 os
