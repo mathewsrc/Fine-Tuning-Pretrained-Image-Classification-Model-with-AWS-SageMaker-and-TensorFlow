@@ -1,0 +1,5 @@
+tensorflow
+smdebug
+matplolib requirements_pytor.txt
+numpy
+os
