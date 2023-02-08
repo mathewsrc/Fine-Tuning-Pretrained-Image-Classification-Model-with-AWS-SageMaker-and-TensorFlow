@@ -1,5 +1,5 @@
 # **Image-Classification-using-AWS-SageMaker**
-Use AWS SageMaker to finetune a pretrained model that can perform image classification
+Use AWS SageMaker to finetune a pretrained tensorflow model  that can perform image classification
 
 ### SageMaker Features used in this project:
 
