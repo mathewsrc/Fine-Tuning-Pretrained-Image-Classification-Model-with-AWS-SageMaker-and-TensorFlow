@@ -1,15 +1,17 @@
 #TODO: Import your dependencies.
 #For instance, below are some dependencies you might need if you are using Pytorch
 import numpy as np
-#import torch
-#import torch.nn as nn
-#import torch.optim as optim
-#import torchvision
-#import torchvision.models as models
-#import torchvision.transforms as transforms
-import tensorflow as tf
+import torch
+import torch.nn as nn
+import torch.optim as optim
+import torchvision
+import torchvision.models as models
+import torchvision.transforms as transforms
 
 import argparse
+
+
+#TODO: Import dependencies for Debugging andd Profiling
 
 def test(model, test_loader):
     '''
@@ -72,7 +74,7 @@ def main(args):
 if __name__=='__main__':
     parser=argparse.ArgumentParser()
     '''
-    TODO: Specify all the hyperparameters you need to use to train your model.
+    TODO: Specify any training args that you might need
     '''
     
     args=parser.parse_args()

@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+# dataset
+Plant_leaf_diseases_dataset_without_augmentation.zip

@@ -1,13 +1,9 @@
 setup:
 	python -m venv ./.env
 
-install_tf:
+install:
 	pip install --upgrade pip &&\
-		python install -r requirements_tf.txt
-
-install_pytor:
-	pip install --upgrade pip &&\
-		python install -r requirements_pytor.txt
+		python install -r requirements.txt
 
 format:
 	black *.py
