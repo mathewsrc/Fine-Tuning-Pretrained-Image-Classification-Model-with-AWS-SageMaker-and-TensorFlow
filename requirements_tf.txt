@@ -1,5 +1,5 @@
 tensorflow
 smdebug
-matplolib requirements_pytor.txt
+matplolib
 numpy
 os
