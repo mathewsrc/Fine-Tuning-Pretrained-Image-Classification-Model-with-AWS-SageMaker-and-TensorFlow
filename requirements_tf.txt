@@ -1,5 +1,0 @@
-tensorflow
-smdebug
-matplolib
-numpy
-os
