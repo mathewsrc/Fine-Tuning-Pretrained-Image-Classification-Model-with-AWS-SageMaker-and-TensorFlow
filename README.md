@@ -4,6 +4,11 @@ In recent years, deep learning has revolutionized the field of computer vision w
 
 This project, uses Amazon Web Services (AWS) SageMaker and Tensorflow to fine-tune a pretrained model for binary image classification. The dataset used in this project can be found at https://www.kaggle.com/datasets/deepcontractor/is-that-santa-image-classification. In addition, SageMaker Debugger was used to measure performance of training job, system resource usage, and for framework metrics analysis.
 
+## Project pipeline
+
+![image_classification_aws](https://user-images.githubusercontent.com/94936606/218553342-e0b3b855-6cc7-4ef2-a87f-0a24fe8b415c.jpg)
+
+
 
 ## Project Features
 
@@ -115,8 +120,35 @@ Install
 ```
 
 Model prediction
+
 ![result2](https://user-images.githubusercontent.com/94936606/218544242-897c20d8-5575-4dc8-a74f-c0e258a221ec.PNG)
 
 ![result](https://user-images.githubusercontent.com/94936606/218544286-a7171249-f3d8-479a-bfe0-a9efdfc1de8f.png)
 
+References
 
+https://www.tensorflow.org/tutorials/images/transfer_learning
+
+https://www.tensorflow.org/tutorials/quickstart/advanced
+
+https://docs.aws.amazon.com/sagemaker/latest/dg/model-access-training-data.html
+
+https://github.com/aws/amazon-sagemaker-examples/blob/main/hyperparameter_tuning/
+
+https://github.com/awslabs/sagemaker-debugger/blob/master/examples/tensorflow2/scripts/tf_keras_gradienttape.py
+
+https://github.com/awslabs/sagemaker-debugger/blob/master/docs/tensorflow.md
+
+https://github.com/aws/sagemaker-python-sdk/blob/master/doc/amazon_sagemaker_debugger.rst
+
+https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-built-in-rules.html
+
+https://github.com/awslabs/sagemaker-debugger/blob/master/docs/api.md#tensorflow-specific-hook-api
+
+https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-enable-tensorboard-summaries.html
+
+https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-analyze-data.html
+
+https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-access-data-profiling-default-plot.html
+
+https://sagemaker.readthedocs.io/en/stable/frameworks/tensorflow/deploying_tensorflow_serving.html
