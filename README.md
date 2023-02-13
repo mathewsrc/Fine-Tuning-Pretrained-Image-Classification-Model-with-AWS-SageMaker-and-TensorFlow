@@ -154,7 +154,7 @@ Debugger and Profiler
 
 <img src="https://user-images.githubusercontent.com/94936606/218581708-d5db56a1-682c-4646-96e2-b7402ef6e75c.png" width=50% height=50%>
 
-
+For More details see: https://github.com/punkmic/Fine-Tuning-Pretrained-Image-Classification-Model-with-AWS-SageMaker-and-TensorFlow/blob/master/train_and_deploy.ipynb
 
 ## References
 
