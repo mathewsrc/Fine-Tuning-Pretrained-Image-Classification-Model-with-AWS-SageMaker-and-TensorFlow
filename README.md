@@ -134,6 +134,21 @@ make install
 <img src="https://user-images.githubusercontent.com/94936606/218544242-897c20d8-5575-4dc8-a74f-c0e258a221ec.PNG" width=50% height=50%>
 
 
+
+Debugger and Profiler 
+<img src="https://user-images.githubusercontent.com/94936606/218580803-80c429ab-3cb5-4a2a-8f59-e79f38e51891.png" width=50% height=50%>
+
+
+<img src="https://user-images.githubusercontent.com/94936606/218581016-d6db88b1-30e0-418b-939d-ccdd6f79541f.png" width=50% height=50%>
+
+
+<img src="https://user-images.githubusercontent.com/94936606/218581427-23d8a29b-6f4c-41e8-a211-f9c58b91d136.png" width=50% height=50%>
+
+
+<img src="https://user-images.githubusercontent.com/94936606/218581708-d5db56a1-682c-4646-96e2-b7402ef6e75c.png" width=50% height=50%>
+
+
+
 ## References
 
 https://www.tensorflow.org/tutorials/images/transfer_learning
