@@ -120,7 +120,7 @@ Install
 pip install -r requirements.txt
 ```
 
-Or with Make
+Or with MakeFile make command
 
 ```
 make install
