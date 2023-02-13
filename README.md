@@ -9,7 +9,7 @@ This project, uses Amazon Web Services (AWS) SageMaker and Tensorflow to fine-tu
 
 - AWS SageMaker
 - AWS SageMaker Debugger
-- Tensorflow version 2.9
+- Tensorflow version 2.10
 
 ## Dataset
 
@@ -18,4 +18,25 @@ The IS THAT SANTA? (Image Classification) dataset consists of 1230 images of San
 ![image](https://user-images.githubusercontent.com/94936606/218476207-78fa33e8-4da5-4470-9ef4-d3c26a402cf9.png)
 
 For more information see: [IS THAT SANTA? (Image Classification)](https://www.kaggle.com/datasets/deepcontractor/is-that-santa-image-classification)
+
+### Setup
+
+Kaggle
+
+Before we can access and download the Kaggle dataset, it is necessary to have a [Kaggle account](https://www.kaggle.com/) and a Kaggle API token (https://www.kaggle.com/account). Next paste the kaggle.json file in aws as follows:
+
+![image](https://user-images.githubusercontent.com/94936606/218479832-34f2ac1b-a7f8-4baa-b9f3-92e5a2e190cb.png)
+
+AWS SageMaker
+
+This project was developed and tested using:
+
+```
+Image: Tensorflow 2.10.0 Python 3.9 CPU optimized
+Instance type: ml.t3.medium
+```
+
+
+
+
 
