@@ -15,9 +15,7 @@ This project, uses Amazon Web Services (AWS) SageMaker and Tensorflow to fine-tu
 
 The IS THAT SANTA? (Image Classification) dataset consists of 1230 images of Santa Claus and random images. This dataset is structured as follows:
 
-``` 
 ![image](https://user-images.githubusercontent.com/94936606/218476207-78fa33e8-4da5-4470-9ef4-d3c26a402cf9.png)
-```
 
 For more information see: [IS THAT SANTA? (Image Classification)](https://www.kaggle.com/datasets/deepcontractor/is-that-santa-image-classification)
 
