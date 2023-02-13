@@ -43,19 +43,19 @@ Before we can access and download the Kaggle dataset, it is necessary to have a 
 
 Move file to project root
 ```
-!mkdir ~/.kaggle
-!cp kaggle.json ~/.kaggle/
-!chmod 600 ~/.kaggle/kaggle.json
+mkdir ~/.kaggle
+cp kaggle.json ~/.kaggle/
+chmod 600 ~/.kaggle/kaggle.json
 ```
 
 The code bellow shows how to donwload dataset and unzip file
 
 ```
-!kaggle datasets download -d deepcontractor/is-that-santa-image-classification
+kaggle datasets download -d deepcontractor/is-that-santa-image-classification
 ```
 
 ```
-!unzip is-that-santa-image-classification.zip
+unzip is-that-santa-image-classification.zip
 ```
 
 As Tensorflow does not support jpg we need to convert images from jpg to jpeg. For this step, we can use a bash script that uses ImageMagick (https://imagemagick.org/index.php).
@@ -91,14 +91,14 @@ make && make install
 Now we can use a bash script on terminal to convert images:
 
 ```
-!./convert_jpg_to_jpeg.sh -d -r is_that_santa/
+./convert_jpg_to_jpeg.sh -d -r is_that_santa/
 ```
 
 Note: the dataset name was manually renamed to is-that-santa. The -d flag in convert_jpg_jpeg.sh stands for delete the orinal images and the -r for recursively converts images.
 
 Now we can upload files to AWS s3:
 ```
-!aws s3 cp is_that_santa s3://{bucke-name}/datasets/ --recursive > /dev/null
+aws s3 cp is_that_santa s3://{bucke-name}/datasets/ --recursive > /dev/null
 ```
 
 Note: replace the {bucket-name} with your own bucket name. --recursive > /dev/null is optinal.
@@ -117,7 +117,13 @@ kaggle==1.5.12
 Install
 
 ```
-!pip install -r requirements.txt
+pip install -r requirements.txt
+```
+
+Or with Make
+
+```
+make install
 ```
 
 ## Model prediction
