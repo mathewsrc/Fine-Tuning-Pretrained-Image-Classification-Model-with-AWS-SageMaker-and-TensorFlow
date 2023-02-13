@@ -1,56 +1,132 @@
-# **Image-Classification-using-AWS-SageMaker**
-Use AWS SageMaker to finetune a pretrained tensorflow model  that can perform image classification
+# **Fine-Tuning Pretrained Image Classification Model with AWS SageMaker and TensorFlow**
 
-### SageMaker Features used in this project:
+In recent years, deep learning has revolutionized the field of computer vision with its ability to accurately classify images. One of the most popular techniques for image classification is using convolutional neural networks (CNNs), which have shown excellent results in comparison with others approaches such as full connected neural networks. However, training these models from scratch can be computationally intensive and time-consuming. To overcome this, another approach called transfer learning has been used and has become increasingly popular.
 
-- Sagemaker profiling
-- Debugger
-- Hyperparameter tuning
+This project, uses Amazon Web Services (AWS) SageMaker and Tensorflow to fine-tune a pretrained model for binary image classification. The dataset used in this project can be found at https://www.kaggle.com/datasets/deepcontractor/is-that-santa-image-classification. In addition, SageMaker Debugger was used to measure performance of training job, system resource usage, and for framework metrics analysis.
+
+## Project pipeline
+
+<img src="https://user-images.githubusercontent.com/94936606/218553342-e0b3b855-6cc7-4ef2-a87f-0a24fe8b415c.jpg" width=90% height=90%>
+
+## Project Features
+
+- AWS SageMaker
+- AWS SageMaker Debugger
+- Tensorflow Framework version 2.9
 
 ## Dataset
 
-The PlantVillage dataset consists of 54303 images of healthy and unhealthy leaves, divided into 38 categories by species and disease. This dataset data is structure as follows:
+The IS THAT SANTA? (Image Classification) dataset consists of 1230 images of Santa Claus and random images. This dataset is structured as follows:
 
-``` 
-FeaturesDict({
-    'image': Image(shape=(None, None, 3), dtype=uint8),
-    'image/filename': Text(shape=(), dtype=string),
-    'label': ClassLabel(shape=(), dtype=int64, num_classes=38),
-})
+![image](https://user-images.githubusercontent.com/94936606/218476207-78fa33e8-4da5-4470-9ef4-d3c26a402cf9.png)
+
+For more information see: [IS THAT SANTA? (Image Classification)](https://www.kaggle.com/datasets/deepcontractor/is-that-santa-image-classification)
+
+## Setup
+
+### AWS SageMaker
+
+```
+Notebook enviroment (Kernel)
+
+Image: Tensorflow 2.10.0 Python 3.9 CPU optimized
+Instance type: ml.t3.medium
 ```
 
-Where image field contains the Image itself, the image/filename contains the image filename and the label contains 38 different categories. 
+### Kaggle
 
-![Example](https://github.com/punkmic/Image-Classification-using-AWS-SageMaker/blob/master/images/plants.PNG)
+Before we can access and download the Kaggle dataset, it is necessary to have a [Kaggle account](https://www.kaggle.com/) and a Kaggle API token (https://www.kaggle.com/account). Next paste the kaggle.json file in aws as follows and execute the code snipped below to move file to root:
 
-For more information see: [An open access repository of images on plant health to enable the development of mobile disease diagnostics](https://arxiv.org/abs/1511.08060).
 
-For details about this dataset see: https://www.tensorflow.org/datasets/catalog/plant_village?hl=pt-br
+<img src="https://user-images.githubusercontent.com/94936606/218479832-34f2ac1b-a7f8-4baa-b9f3-92e5a2e190cb.png" width=30% height=30%>
 
-Donwload dataset: [Plant_leaf_diseases_dataset_without_augmentation.zip](https://data.mendeley.com/datasets/tywbtsjrjv/1)
 
-Convert jpg to jpeg
-https://gist.github.com/ARolek/9199329
+Move file to project root
+```
+!mkdir ~/.kaggle
+!cp kaggle.json ~/.kaggle/
+!chmod 600 ~/.kaggle/kaggle.json
+```
 
-I needed a newer version of ImageMagick than is available on the yum packages on Amazon Linux. I tried using the remi repo but it failed with dependency errors. Here is what I did to install ImageMagick with support for PNG, JPG, and TIFF.
+The code bellow shows how to donwload dataset and unzip file
 
-download the most recent package
+```
+!kaggle datasets download -d deepcontractor/is-that-santa-image-classification
+```
 
+```
+!unzip is-that-santa-image-classification.zip
+```
+
+As Tensorflow does not support jpg we need to convert images from jpg to jpeg. For this step, we can use a bash script that uses ImageMagick (https://imagemagick.org/index.php).
+
+To install ImageMagick run the following code developed by ARolek (https://gist.github.com/ARolek/9199329) on terminal:
+
+Download the most recent package
+
+```
 wget http://www.imagemagick.org/download/ImageMagick.tar.gz
-uncomress the package
+```
 
+Uncompress the package
+
+```
 tar -vxf ImageMagick.tar.gz
-install the devel packages for png, jpg, tiff. these are dependencies of ImageMagick
+```
 
+Install the devel packages for png, jpg, tiff. these are dependencies of ImageMagick
+
+```
 sudo yum -y install libpng-devel libjpeg-devel libtiff-devel
-configure ImageMagick without X11. this is a server without a display (headless) so we don't need X11
+```
 
+Configure ImageMagick without X11. this is a server without a display (headless) so we don't need X11
+
+```
 cd ImageMagick
 ./configure --without-x
 make && make install
-mission complete.
+```
 
-Tensorflow transfer-learning
+Now we can use a bash script on terminal to convert images:
+
+```
+!./convert_jpg_to_jpeg.sh -d -r is_that_santa/
+```
+
+Note: the dataset name was manually renamed to is-that-santa. The -d flag in convert_jpg_jpeg.sh stands for delete the orinal images and the -r for recursively converts images.
+
+Now we can upload files to AWS s3:
+```
+!aws s3 cp is_that_santa s3://{bucke-name}/datasets/ --recursive > /dev/null
+```
+
+Note: replace the {bucket-name} with your own bucket name. --recursive > /dev/null is optinal.
+
+
+### Python requirements and install
+
+Requirements
+
+```
+tensorflow==2.10.1
+smdebug==1.0.12
+kaggle==1.5.12
+```
+
+Install
+
+```
+!pip install -r requirements.txt
+```
+
+## Model prediction
+
+<img src="https://user-images.githubusercontent.com/94936606/218544242-897c20d8-5575-4dc8-a74f-c0e258a221ec.PNG" width=50% height=50%>
+
+
+## References
+
 https://www.tensorflow.org/tutorials/images/transfer_learning
 
 https://www.tensorflow.org/tutorials/quickstart/advanced
