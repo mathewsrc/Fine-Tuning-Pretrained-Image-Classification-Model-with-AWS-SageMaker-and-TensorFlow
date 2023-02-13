@@ -1,6 +1,7 @@
 # **Fine-Tuning Pretrained Image Classification Model with AWS SageMaker and TensorFlow**
 
-Project developed for AWS Machine Learning Engineer Scholarship by Udacity (2023)
+
+Project developed for AWS Machine Learning Engineer Scholarship offered by Udacity (2023)
 
 In recent years, deep learning has revolutionized the field of computer vision with its ability to accurately classify images. One of the most popular techniques for image classification is using convolutional neural networks (CNNs), which have shown excellent results in comparison with others approaches such as full connected neural networks. However, training these models from scratch can be computationally intensive and time-consuming. To overcome this, another approach called transfer learning has been used and has become increasingly popular.
 
