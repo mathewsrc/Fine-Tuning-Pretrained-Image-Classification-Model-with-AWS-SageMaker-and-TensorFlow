@@ -15,4 +15,4 @@ lint:
 	pylint --disable=R,C scripts/*.py	
 
 all:
-	install lint 
+	install format lint 
