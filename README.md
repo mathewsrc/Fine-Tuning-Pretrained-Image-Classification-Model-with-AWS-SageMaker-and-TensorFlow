@@ -6,7 +6,7 @@ This project, uses Amazon Web Services (AWS) SageMaker and Tensorflow to fine-tu
 
 ## Project pipeline
 
-<img src="https://user-images.githubusercontent.com/94936606/218553342-e0b3b855-6cc7-4ef2-a87f-0a24fe8b415c.jpg" width=50% height=50%>
+<img src="https://user-images.githubusercontent.com/94936606/218553342-e0b3b855-6cc7-4ef2-a87f-0a24fe8b415c.jpg" width=80% height=80%>
 
 ## Project Features
 
@@ -37,7 +37,8 @@ Instance type: ml.t3.medium
 
 Before we can access and download the Kaggle dataset, it is necessary to have a [Kaggle account](https://www.kaggle.com/) and a Kaggle API token (https://www.kaggle.com/account). Next paste the kaggle.json file in aws as follows and execute the code snipped below to move file to root:
 
-![image](https://user-images.githubusercontent.com/94936606/218479832-34f2ac1b-a7f8-4baa-b9f3-92e5a2e190cb.png)
+
+<img src="https://user-images.githubusercontent.com/94936606/218479832-34f2ac1b-a7f8-4baa-b9f3-92e5a2e190cb.png" width=80% height=80%>
 
 
 Move file to project root
@@ -119,7 +120,8 @@ Install
 
 Model prediction
 
-![result2](https://user-images.githubusercontent.com/94936606/218544242-897c20d8-5575-4dc8-a74f-c0e258a221ec.PNG)
+<img src="https://user-images.githubusercontent.com/94936606/218544242-897c20d8-5575-4dc8-a74f-c0e258a221ec.PNG" width=80% height=80%>
+
 
 References
 
