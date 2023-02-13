@@ -5,7 +5,7 @@ In recent years, deep learning has revolutionized the field of computer vision w
 This project, uses Amazon Web Services (AWS) SageMaker and Tensorflow to fine-tune a pretrained model for binary image classification. The dataset used in this project can be found at https://www.kaggle.com/datasets/deepcontractor/is-that-santa-image-classification. In addition, SageMaker Debugger was used to measure performance of training job, system resource usage, and for framework metrics analysis.
 
 
-### Project Features:
+## Project Features:
 
 - AWS SageMaker
 - AWS SageMaker Debugger
@@ -19,9 +19,9 @@ The IS THAT SANTA? (Image Classification) dataset consists of 1230 images of San
 
 For more information see: [IS THAT SANTA? (Image Classification)](https://www.kaggle.com/datasets/deepcontractor/is-that-santa-image-classification)
 
-### Setup
+## Setup
 
-AWS SageMaker
+### AWS SageMaker
 
 ```
 Notebook enviroment (Kernel)
@@ -30,7 +30,7 @@ Image: Tensorflow 2.10.0 Python 3.9 CPU optimized
 Instance type: ml.t3.medium
 ```
 
-Kaggle
+### Kaggle
 
 Before we can access and download the Kaggle dataset, it is necessary to have a [Kaggle account](https://www.kaggle.com/) and a Kaggle API token (https://www.kaggle.com/account). Next paste the kaggle.json file in aws as follows and execute the code snipped below to move file to root:
 
@@ -98,7 +98,7 @@ Now we can upload files to AWS s3 running the following code:
 Note: replace the {bucket-name} with your own bucket name. --recursive > /dev/null is optinal.
 
 
-Python requirements and install
+### Python requirements and install
 
 Requirements
 
