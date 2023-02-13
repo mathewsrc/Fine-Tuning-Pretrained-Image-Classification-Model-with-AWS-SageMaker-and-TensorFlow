@@ -1,31 +1,23 @@
-# **Image-Classification-using-AWS-SageMaker**
-Use AWS SageMaker to finetune a pretrained tensorflow model  that can perform image classification
+# **Fine-Tuning Pretrained Image Classification Model with AWS SageMaker and TensorFlow**
 
-### SageMaker Features used in this project:
+In recent years, deep learning has revolutionized the field of computer vision with its ability to accurately classify images. One of the most popular techniques for image classification is using convolutional neural networks (CNNs), which have shown excellent results in comparison with others approaches such as full connected neural networks. However, training these models from scratch can be computationally intensive and time-consuming. To overcome this, another approach called transfer learning has been used and has become increasingly popular.
 
-- Sagemaker profiling
-- Debugger
-- Hyperparameter tuning
+This project, uses Amazon Web Services (AWS) SageMaker and Tensorflow to fine-tune a pretrained model for binary image classification. The dataset used in this project can be found at https://www.kaggle.com/datasets/deepcontractor/is-that-santa-image-classification. In addition, SageMaker Debugger was used to measure performance of training job, system resource usage, and for framework metrics analysis.
+
+
+### Project Features:
+
+- AWS SageMaker
+- AWS SageMaker Debugger
+- Tensorflow version 2.9
 
 ## Dataset
 
-The PlantVillage dataset consists of 54303 images of healthy and unhealthy leaves, divided into 38 categories by species and disease. This dataset data is structure as follows:
+The IS THAT SANTA? (Image Classification) dataset consists of 1230 images of Santa Claus and random images. This dataset is structured as follows:
 
 ``` 
-FeaturesDict({
-    'image': Image(shape=(None, None, 3), dtype=uint8),
-    'image/filename': Text(shape=(), dtype=string),
-    'label': ClassLabel(shape=(), dtype=int64, num_classes=38),
-})
+![image](https://user-images.githubusercontent.com/94936606/218476207-78fa33e8-4da5-4470-9ef4-d3c26a402cf9.png)
 ```
 
-Where image field contains the Image itself, the image/filename contains the image filename and the label contains 38 different categories. 
-
-![Example](https://github.com/punkmic/Image-Classification-using-AWS-SageMaker/blob/master/images/plants.PNG)
-
-For more information see: [An open access repository of images on plant health to enable the development of mobile disease diagnostics](https://arxiv.org/abs/1511.08060).
-
-For details about this dataset see: https://www.tensorflow.org/datasets/catalog/plant_village?hl=pt-br
-
-Donwload dataset: [Plant_leaf_diseases_dataset_without_augmentation.zip](https://data.mendeley.com/datasets/tywbtsjrjv/1)
+For more information see: [IS THAT SANTA? (Image Classification)](https://www.kaggle.com/datasets/deepcontractor/is-that-santa-image-classification)
 
