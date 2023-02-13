@@ -1,5 +1,4 @@
-tensorflow
-smdebug
-matplotlib
-numpy
-kaggle
+tensorflow==2.10.1
+smdebug==1.0.12
+kaggle==1.5.12
+
