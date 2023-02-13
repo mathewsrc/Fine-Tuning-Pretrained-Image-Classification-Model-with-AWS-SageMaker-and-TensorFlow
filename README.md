@@ -52,7 +52,7 @@ The code bellow shows how to donwload dataset and unzip file.
 !unzip is-that-santa-image-classification.zip
 ```
 
-As Tensorflow does not supports jpg we need to convert images from jpg to jpeg. For this step we going to use a bash script that uses ImageMagick (https://imagemagick.org/index.php).
+As Tensorflow does not support jpg we need to convert images from jpg to jpeg. For this step, we can use a bash script that uses ImageMagick (https://imagemagick.org/index.php).
 
 To install ImageMagick run the following code developed by ARolek (https://gist.github.com/ARolek/9199329) on terminal:
 
@@ -82,13 +82,20 @@ cd ImageMagick
 make && make install
 ```
 
-Now we can use this bash script on terminal to convert images:
+Now we can use a bash script on terminal to convert images:
 
 ```
 !./convert_jpg_to_jpeg.sh -d -r is_that_santa/
 ```
 
 Note: the dataset name was manually renamed to is-that-santa. The -d flag in convert_jpg_jpeg.sh stands for delete the orinal images and the -r for recursively converts images.
+
+Now we can upload files to AWS s3 running the following code:
+```
+!aws s3 cp is_that_santa s3://{bucke-name}/datasets/ --recursive > /dev/null
+```
+
+Note: replace the {bucket-name} with your own bucket name. --recursive > /dev/null is optinal.
 
 
 Python requirements and install
@@ -104,10 +111,3 @@ Install
 ```
 !pip install -r requirements.txt
 ```
-
-
-
-
-
-
-
