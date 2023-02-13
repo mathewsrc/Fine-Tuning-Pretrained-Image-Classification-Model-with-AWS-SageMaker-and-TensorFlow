@@ -21,20 +21,52 @@ For more information see: [IS THAT SANTA? (Image Classification)](https://www.ka
 
 ### Setup
 
-Kaggle
-
-Before we can access and download the Kaggle dataset, it is necessary to have a [Kaggle account](https://www.kaggle.com/) and a Kaggle API token (https://www.kaggle.com/account). Next paste the kaggle.json file in aws as follows:
-
-![image](https://user-images.githubusercontent.com/94936606/218479832-34f2ac1b-a7f8-4baa-b9f3-92e5a2e190cb.png)
-
 AWS SageMaker
 
-This project was developed and tested using:
-
 ```
+Notebook enviroment (Kernel)
+
 Image: Tensorflow 2.10.0 Python 3.9 CPU optimized
 Instance type: ml.t3.medium
 ```
+
+Kaggle
+
+Before we can access and download the Kaggle dataset, it is necessary to have a [Kaggle account](https://www.kaggle.com/) and a Kaggle API token (https://www.kaggle.com/account). Next paste the kaggle.json file in aws as follows and execute the code snipped below to move file to root:
+
+![image](https://user-images.githubusercontent.com/94936606/218479832-34f2ac1b-a7f8-4baa-b9f3-92e5a2e190cb.png)
+
+```
+!mkdir ~/.kaggle
+!cp kaggle.json ~/.kaggle/
+!chmod 600 ~/.kaggle/kaggle.json
+```
+
+The code bellow shows how to donwload dataset, unzip, and convert its format to one of the required by Tensorflow
+```
+!kaggle datasets download -d deepcontractor/is-that-santa-image-classification
+!unzip is-that-santa-image-classification.zip
+!./convert_jpg_to_jpeg.sh -d -r is_that_santa/
+!aws s3 cp is_that_santa s3://{bucket-name}/datasets/
+```
+Note: the dataset name was manually renamed to is-that-santa. The -d flag in convert_jpg_jpeg.sh stands for delete the orinal images and the -r for recursively converts images.
+
+
+Python requirements and install
+
+Requirements
+
+tensorflow
+smdebug
+kaggle
+
+Install
+
+```
+!pip install -r requirements.txt
+```
+
+
 
 
 
