@@ -9,7 +9,7 @@ This project, uses Amazon Web Services (AWS) SageMaker and Tensorflow to fine-tu
 
 - AWS SageMaker
 - AWS SageMaker Debugger
-- Tensorflow version 2.10
+- Tensorflow Framework version 2.9
 
 ## Dataset
 
@@ -36,13 +36,15 @@ Before we can access and download the Kaggle dataset, it is necessary to have a 
 
 ![image](https://user-images.githubusercontent.com/94936606/218479832-34f2ac1b-a7f8-4baa-b9f3-92e5a2e190cb.png)
 
+
+Move file to project root
 ```
 !mkdir ~/.kaggle
 !cp kaggle.json ~/.kaggle/
 !chmod 600 ~/.kaggle/kaggle.json
 ```
 
-The code bellow shows how to donwload dataset and unzip file.
+The code bellow shows how to donwload dataset and unzip file
 
 ```
 !kaggle datasets download -d deepcontractor/is-that-santa-image-classification
