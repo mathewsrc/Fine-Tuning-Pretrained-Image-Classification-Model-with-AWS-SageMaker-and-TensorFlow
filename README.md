@@ -38,7 +38,7 @@ Instance type: ml.t3.medium
 Before we can access and download the Kaggle dataset, it is necessary to have a [Kaggle account](https://www.kaggle.com/) and a Kaggle API token (https://www.kaggle.com/account). Next paste the kaggle.json file in aws as follows and execute the code snipped below to move file to root:
 
 
-<img src="https://user-images.githubusercontent.com/94936606/218479832-34f2ac1b-a7f8-4baa-b9f3-92e5a2e190cb.png" width=50% height=50%>
+<img src="https://user-images.githubusercontent.com/94936606/218479832-34f2ac1b-a7f8-4baa-b9f3-92e5a2e190cb.png" width=30% height=30%>
 
 
 Move file to project root
