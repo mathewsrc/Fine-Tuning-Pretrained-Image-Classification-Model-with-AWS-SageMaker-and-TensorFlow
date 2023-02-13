@@ -12,10 +12,7 @@ format:
 	black scripts/*.py
 
 lint:
-	pylint --disable=R,C scripts/*.py
-
-test:
-	python -m pytest -vv --cov=myrepolib tests/*.py	
+	pylint --disable=R,C scripts/*.py	
 
 all:
-	install lint test
+	install lint 

@@ -1,7 +1,5 @@
 import tensorflow as tf
 import os
-from tensorflow.keras.optimizers import Adam
-from tensorflow.keras.utils import image_dataset_from_directory
 import argparse
 
 
@@ -31,7 +29,7 @@ def train(model, args, train_ds, test_ds):
         None
     """
     # Set up the Adam optimizer with specified learning rate, beta_1, and beta_2
-    optimizer = Adam(
+    optimizer = tf.keras.optimizers.Adam(
         learning_rate=args.learning_rate, beta_1=args.beta_1, beta_2=args.beta_2
     )
 
@@ -174,10 +172,10 @@ def net():
 
 def main(args):
     # Load the training and testing datasets using image_dataset_from_directory method
-    train_ds = image_dataset_from_directory(
+    train_ds = tf.keras.utils.image_dataset_from_directory(
         args.training, batch_size=args.batch_size, seed=123, image_size=IMG_SIZE
     )
-    test_ds = image_dataset_from_directory(
+    test_ds = tf.keras.utils.image_dataset_from_directory(
         args.testing, batch_size=args.batch_size, seed=123, image_size=IMG_SIZE
     )
 

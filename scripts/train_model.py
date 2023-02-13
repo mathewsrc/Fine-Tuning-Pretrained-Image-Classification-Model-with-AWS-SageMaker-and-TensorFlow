@@ -1,7 +1,5 @@
 import tensorflow as tf
 import os
-from tensorflow.keras.optimizers import Adam
-from tensorflow.keras.utils import image_dataset_from_directory
 import argparse
 import smdebug.tensorflow as smd
 
@@ -108,10 +106,10 @@ def test(model, test_ds, hook, args):
 def main(args):
 
     # Load the training and testing datasets using image_dataset_from_directory method
-    train_ds = image_dataset_from_directory(
+    train_ds = tf.keras.utils.image_dataset_from_directory(
         args.training, batch_size=args.batch_size, seed=123, image_size=IMG_SIZE
     )
-    test_ds = image_dataset_from_directory(
+    test_ds = tf.keras.utils.image_dataset_from_directory(
         args.testing, batch_size=args.batch_size, seed=123, image_size=IMG_SIZE
     )
 
@@ -138,7 +136,7 @@ def main(args):
     hook = smd.KerasHook.create_from_json_file()
 
     # Create an optimizer
-    optimizer = Adam(
+    optimizer = tf.keras.optimizers.Adam(
         learning_rate=args.learning_rate, beta_1=args.beta_1, beta_2=args.beta_2
     )
 
