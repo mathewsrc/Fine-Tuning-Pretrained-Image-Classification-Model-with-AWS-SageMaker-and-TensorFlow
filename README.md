@@ -102,9 +102,9 @@ Note: replace the {bucket-name} with your own bucket name. --recursive > /dev/nu
 
 Requirements
 
-tensorflow
-smdebug
-kaggle
+- tensorflow
+- smdebug
+- kaggle
 
 Install
 
