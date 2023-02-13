@@ -64,7 +64,7 @@ Download the most recent package
 wget http://www.imagemagick.org/download/ImageMagick.tar.gz
 ```
 
-Uncomress the package
+Uncompress the package
 
 ```
 tar -vxf ImageMagick.tar.gz
