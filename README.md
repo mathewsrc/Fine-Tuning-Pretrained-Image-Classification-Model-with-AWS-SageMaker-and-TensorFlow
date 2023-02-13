@@ -5,7 +5,7 @@ In recent years, deep learning has revolutionized the field of computer vision w
 This project, uses Amazon Web Services (AWS) SageMaker and Tensorflow to fine-tune a pretrained model for binary image classification. The dataset used in this project can be found at https://www.kaggle.com/datasets/deepcontractor/is-that-santa-image-classification. In addition, SageMaker Debugger was used to measure performance of training job, system resource usage, and for framework metrics analysis.
 
 
-## Project Features:
+## Project Features
 
 - AWS SageMaker
 - AWS SageMaker Debugger
