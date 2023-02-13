@@ -113,3 +113,10 @@ Install
 ```
 !pip install -r requirements.txt
 ```
+
+Model prediction
+![result2](https://user-images.githubusercontent.com/94936606/218544242-897c20d8-5575-4dc8-a74f-c0e258a221ec.PNG)
+
+![result](https://user-images.githubusercontent.com/94936606/218544286-a7171249-f3d8-479a-bfe0-a9efdfc1de8f.png)
+
+
