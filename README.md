@@ -6,7 +6,7 @@ This project, uses Amazon Web Services (AWS) SageMaker and Tensorflow to fine-tu
 
 ## Project pipeline
 
-<img src="https://user-images.githubusercontent.com/94936606/218553342-e0b3b855-6cc7-4ef2-a87f-0a24fe8b415c.jpg" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/94936606/218553342-e0b3b855-6cc7-4ef2-a87f-0a24fe8b415c.jpg" width=90% height=90%>
 
 ## Project Features
 
@@ -118,12 +118,12 @@ Install
 !pip install -r requirements.txt
 ```
 
-Model prediction
+## Model prediction
 
-<img src="https://user-images.githubusercontent.com/94936606/218544242-897c20d8-5575-4dc8-a74f-c0e258a221ec.PNG" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/94936606/218544242-897c20d8-5575-4dc8-a74f-c0e258a221ec.PNG" width=50% height=50%>
 
 
-References
+## References
 
 https://www.tensorflow.org/tutorials/images/transfer_learning
 
