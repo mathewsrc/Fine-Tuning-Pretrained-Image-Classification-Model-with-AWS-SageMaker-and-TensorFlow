@@ -92,7 +92,7 @@ Now we can use a bash script on terminal to convert images:
 
 Note: the dataset name was manually renamed to is-that-santa. The -d flag in convert_jpg_jpeg.sh stands for delete the orinal images and the -r for recursively converts images.
 
-Now we can upload files to AWS s3 running the following code:
+Now we can upload files to AWS s3:
 ```
 !aws s3 cp is_that_santa s3://{bucke-name}/datasets/ --recursive > /dev/null
 ```
