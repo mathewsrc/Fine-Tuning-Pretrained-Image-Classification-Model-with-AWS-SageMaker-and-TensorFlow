@@ -42,13 +42,52 @@ Before we can access and download the Kaggle dataset, it is necessary to have a 
 !chmod 600 ~/.kaggle/kaggle.json
 ```
 
-The code bellow shows how to donwload dataset, unzip, and convert its format to one of the required by Tensorflow
+The code bellow shows how to donwload dataset and unzip file.
+
 ```
 !kaggle datasets download -d deepcontractor/is-that-santa-image-classification
-!unzip is-that-santa-image-classification.zip
-!./convert_jpg_to_jpeg.sh -d -r is_that_santa/
-!aws s3 cp is_that_santa s3://{bucket-name}/datasets/
 ```
+
+```
+!unzip is-that-santa-image-classification.zip
+```
+
+As Tensorflow does not supports jpg we need to convert images from jpg to jpeg. For this step we going to use a bash script that uses ImageMagick (https://imagemagick.org/index.php).
+
+To install ImageMagick run the following code developed by ARolek (https://gist.github.com/ARolek/9199329) on terminal:
+
+Download the most recent package
+
+```
+wget http://www.imagemagick.org/download/ImageMagick.tar.gz
+```
+
+Uncomress the package
+
+```
+tar -vxf ImageMagick.tar.gz
+```
+
+Install the devel packages for png, jpg, tiff. these are dependencies of ImageMagick
+
+```
+sudo yum -y install libpng-devel libjpeg-devel libtiff-devel
+```
+
+Configure ImageMagick without X11. this is a server without a display (headless) so we don't need X11
+
+```
+cd ImageMagick
+./configure --without-x
+make && make install
+```
+
+Now we can use this bash script on terminal to convert images:
+
+```
+!./convert_jpg_to_jpeg.sh -d -r is_that_santa/
+```
+
 Note: the dataset name was manually renamed to is-that-santa. The -d flag in convert_jpg_jpeg.sh stands for delete the orinal images and the -r for recursively converts images.
 
 
