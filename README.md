@@ -15,6 +15,8 @@ Source: DALL-E
 
 <img src="https://user-images.githubusercontent.com/94936606/218553342-e0b3b855-6cc7-4ef2-a87f-0a24fe8b415c.jpg" width=90% height=90%>
 
+Note: model was trained and tested by using custom training and inference scripts [scripts](https://github.com/punkmic/Fine-Tuning-Pretrained-Image-Classification-Model-with-AWS-SageMaker-and-TensorFlow/tree/master/scripts).
+
 ## Project Features
 
 - AWS SageMaker
