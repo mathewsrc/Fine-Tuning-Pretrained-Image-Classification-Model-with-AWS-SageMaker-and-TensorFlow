@@ -1,5 +1,7 @@
 tensorflow==2.10.1
 smdebug==1.0.12
 kaggle==1.5.12
-pylint==2.16.2
 sagemaker==2.132.0
+black
+pylint
+
