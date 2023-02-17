@@ -1,7 +1,6 @@
 import tensorflow as tf
 import os
 import argparse
-import smdebug.tensorflow as smd
 
 
 # Define image size
@@ -102,8 +101,8 @@ def train(model, args, train_ds, test_ds):
         # Print the current epoch number, the train loss, and the train accuracy
         print(
             f"Epoch {epoch + 1}, "
-            f"Loss: {train_loss.result()}, "
-            f"Accuracy: {train_accuracy.result()}, "
+            f"Loss: {train_loss.result().numpy()}, "
+            f"Accuracy: {train_accuracy.result().numpy()}, "
         )
 
         # Loop over the batches of data in the test dataset
@@ -112,8 +111,8 @@ def train(model, args, train_ds, test_ds):
             test_step(images, labels)
 
         # Print the test loss and accuracy after the current epoch
-        print(f"Test Loss: {test_loss.result()}")
-        print(f"Test Accuracy: {test_accuracy.result()}")
+        print(f"Test Loss: {test_loss.result().numpy()}")
+        print(f"Test Accuracy: {test_accuracy.result().numpy()}")
 
     # Set the version of the model to be saved
     # version = "00000000"
