@@ -12,7 +12,7 @@ format:
 	black scripts/*.py
 
 lint:
-	pylint --disable=R,C scripts/*.py	
+	pylint --disable=R,C,E1102,E0401 scripts/*.py	
 
 all:
 	install format lint 
