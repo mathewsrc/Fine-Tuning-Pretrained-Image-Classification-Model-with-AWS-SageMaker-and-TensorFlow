@@ -7,9 +7,15 @@ In recent years, deep learning has revolutionized the field of computer vision w
 
 This project, uses Amazon Web Services (AWS) SageMaker and Tensorflow to fine-tune a pretrained model for binary image classification. The dataset used in this project can be found at https://www.kaggle.com/datasets/deepcontractor/is-that-santa-image-classification. In addition, SageMaker Debugger was used to measure performance of training job, system resource usage, and for framework metrics analysis.
 
+<img src="https://user-images.githubusercontent.com/94936606/218581977-57d269fe-592f-4cc1-8812-1bc5d395d758.png" width=30% height=30%>
+Source: DALL-E
+
+
 ## Project pipeline
 
 <img src="https://user-images.githubusercontent.com/94936606/218553342-e0b3b855-6cc7-4ef2-a87f-0a24fe8b415c.jpg" width=90% height=90%>
+
+Note: model was trained and tested by using custom training and inference [scripts](https://github.com/punkmic/Fine-Tuning-Pretrained-Image-Classification-Model-with-AWS-SageMaker-and-TensorFlow/tree/master/scripts).
 
 ## Project Features
 
@@ -38,7 +44,7 @@ Instance type: ml.t3.medium
 
 ### Kaggle
 
-Before we can access and download the Kaggle dataset, it is necessary to have a [Kaggle account](https://www.kaggle.com/) and a Kaggle API token (https://www.kaggle.com/account). Next paste the kaggle.json file in aws as follows and execute the code snipped below to move file to root:
+Before we can access and download the Kaggle dataset, it is necessary to have a [Kaggle account](https://www.kaggle.com/) and a Kaggle API token (https://www.kaggle.com/account). Next paste the kaggle.json file in AWS SageMaker Studio as follows and execute the code snipped below to move file to root:
 
 
 <img src="https://user-images.githubusercontent.com/94936606/218479832-34f2ac1b-a7f8-4baa-b9f3-92e5a2e190cb.png" width=30% height=30%>
@@ -133,6 +139,22 @@ make install
 
 <img src="https://user-images.githubusercontent.com/94936606/218544242-897c20d8-5575-4dc8-a74f-c0e258a221ec.PNG" width=50% height=50%>
 
+
+
+Debugger and Profiler 
+
+<img src="https://user-images.githubusercontent.com/94936606/218580803-80c429ab-3cb5-4a2a-8f59-e79f38e51891.png" width=50% height=50%>
+
+
+<img src="https://user-images.githubusercontent.com/94936606/218581016-d6db88b1-30e0-418b-939d-ccdd6f79541f.png" width=50% height=50%>
+
+
+<img src="https://user-images.githubusercontent.com/94936606/218581427-23d8a29b-6f4c-41e8-a211-f9c58b91d136.png" width=50% height=50%>
+
+
+<img src="https://user-images.githubusercontent.com/94936606/218581708-d5db56a1-682c-4646-96e2-b7402ef6e75c.png" width=50% height=50%>
+
+For More details see: https://github.com/punkmic/Fine-Tuning-Pretrained-Image-Classification-Model-with-AWS-SageMaker-and-TensorFlow/blob/master/train_and_deploy.ipynb
 
 ## References
 
