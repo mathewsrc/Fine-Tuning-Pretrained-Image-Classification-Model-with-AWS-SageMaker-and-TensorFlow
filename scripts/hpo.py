@@ -62,6 +62,12 @@ def train(model, args, train_ds, test_ds):
         # Update the training loss and accuracy metrics
         train_loss(loss)
         train_accuracy(labels, predictions)
+        
+        # Print the train loss and the train accuracy
+        print(
+            f"Loss: {train_loss.result().numpy()}, "
+            f"Accuracy: {train_accuracy.result().numpy()}, "
+        )
 
     @tf.function
     def test_step(images, labels):
@@ -73,8 +79,9 @@ def train(model, args, train_ds, test_ds):
         test_loss(t_loss)
         # Update the test accuracy metric with the accuracy of the model's predictions
         test_accuracy(labels, predictions)
-        # Return nothing
-        return
+        # Print the test loss and accuracy 
+        print(f"Test Loss: {test_loss.result().numpy()}")
+        print(f"Test Accuracy: {test_accuracy.result().numpy()}")
 
     # Print message indicating the start of the training process
     print("Training starts ...")
@@ -87,6 +94,8 @@ def train(model, args, train_ds, test_ds):
         # Reset the states of the test loss and accuracy metrics
         test_loss.reset_states()
         test_accuracy.reset_states()
+        
+        print(f"Epoch {epoch + 1}")
 
         # Loop over the batches of data in the training dataset
         for batch, (images, labels) in enumerate(train_ds):
@@ -98,21 +107,12 @@ def train(model, args, train_ds, test_ds):
         # Print message indicating the end of the current epoch
         print("Training finished!")
 
-        # Print the current epoch number, the train loss, and the train accuracy
-        print(
-            f"Epoch {epoch + 1}, "
-            f"Loss: {train_loss.result().numpy()}, "
-            f"Accuracy: {train_accuracy.result().numpy()}, "
-        )
 
         # Loop over the batches of data in the test dataset
         for images, labels in test_ds:
             # Run a test step on the current batch of data
             test_step(images, labels)
 
-        # Print the test loss and accuracy after the current epoch
-        print(f"Test Loss: {test_loss.result().numpy()}")
-        print(f"Test Accuracy: {test_accuracy.result().numpy()}")
 
     # Set the version of the model to be saved
     # version = "00000000"
