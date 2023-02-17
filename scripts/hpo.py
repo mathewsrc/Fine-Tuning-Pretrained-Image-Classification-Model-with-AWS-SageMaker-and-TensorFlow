@@ -1,6 +1,7 @@
 import tensorflow as tf
 import os
 import argparse
+import smdebug.tensorflow as smd
 
 
 # Define image size
@@ -115,14 +116,14 @@ def train(model, args, train_ds, test_ds):
         print(f"Test Accuracy: {test_accuracy.result()}")
 
     # Set the version of the model to be saved
-    version = "00000000"
+    # version = "00000000"
     # Define the directory where the model will be saved
-    ckpt_dir = os.path.join(args.model_dir, version)
+    # model_dir = os.path.join(args.model_dir, version)
     # If the directory does not already exist, create it
-    if not os.path.exists(ckpt_dir):
-        os.makedirs(ckpt_dir)
+    # if not os.path.exists(model_dir):
+    # os.makedirs(model_dir)
     # Save the model in the defined directory
-    model.save(ckpt_dir)
+    # model.save(model_dir)
 
 
 def net():
@@ -157,7 +158,7 @@ def net():
     prediction_layer = tf.keras.layers.Dense(1)
 
     # Define inputs and outputs for the model
-    inputs = tf.keras.Input(shape=(160, 160, 3))
+    inputs = tf.keras.Input(shape=IMG_SHAPE)
     x = data_augmentation(inputs)
     x = preprocess_input(x)
     x = base_model(x, training=False)
@@ -179,17 +180,6 @@ def main(args):
         args.testing, batch_size=args.batch_size, seed=123, image_size=IMG_SIZE
     )
 
-    # Split the training dataset into validation and training datasets
-    val_batches = tf.data.experimental.cardinality(train_ds)
-    train_ds = train_ds.take(val_batches // 5)
-    val_ds = train_ds.skip(val_batches // 5)
-
-    # Use prefetch to improve performance
-    AUTOTUNE = tf.data.AUTOTUNE
-    train_ds = train_ds.prefetch(buffer_size=AUTOTUNE)
-    val_ds = val_ds.prefetch(buffer_size=AUTOTUNE)
-    test_ds = test_ds.prefetch(buffer_size=AUTOTUNE)
-
     # Use prefetch to improve performance
     AUTOTUNE = tf.data.AUTOTUNE
     train_ds = train_ds.prefetch(buffer_size=AUTOTUNE)
@@ -207,8 +197,8 @@ if __name__ == "__main__":
 
     # Hyperparameters sent by the client are passed as command-line arguments to the script.
     parser.add_argument("--epochs", type=int, default=4)
-    parser.add_argument("--batch-size", type=int, default=64)
-    parser.add_argument("--learning-rate", type=float, default=0.001)
+    parser.add_argument("--batch_size", type=int, default=64)
+    parser.add_argument("--learning_rate", type=float, default=0.001)
     parser.add_argument("--beta_1", type=float, default=0.9)
     parser.add_argument("--beta_2", type=float, default=0.999)
 

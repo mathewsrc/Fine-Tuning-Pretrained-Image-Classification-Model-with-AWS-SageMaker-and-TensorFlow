@@ -42,7 +42,7 @@ def net():
     prediction_layer = tf.keras.layers.Dense(1)
 
     # Define inputs and outputs for the model
-    inputs = tf.keras.Input(shape=(160, 160, 3))
+    inputs = tf.keras.Input(shape=IMG_SHAPE)
     x = data_augmentation(inputs)
     x = preprocess_input(x)
     x = base_model(x, training=False)
@@ -55,7 +55,7 @@ def net():
     return model
 
 
-def train_model(model, train_ds, val_ds, hook, args):
+def train_model(model, train_ds, hook, args, val_ds=None):
     """
     Train a machine learning model.
 
@@ -71,7 +71,12 @@ def train_model(model, train_ds, val_ds, hook, args):
     hook.set_mode(mode=smd.modes.TRAIN)
 
     # Train the model
-    model.fit(train_ds, validation_data=val_ds, epochs=args.epochs, callbacks=[hook])
+    if val_ds != None:
+        model.fit(
+            train_ds, validation_data=val_ds, epochs=args.epochs, callbacks=[hook]
+        )
+    else:
+        model.fit(train_ds, epochs=args.epochs, callbacks=[hook])
 
 
 def test(model, test_ds, hook, args):
@@ -95,12 +100,12 @@ def test(model, test_ds, hook, args):
     version = "00000000"
 
     # Create a directory for the checkpoint
-    ckpt_dir = os.path.join(args.model_dir, version)
-    if not os.path.exists(ckpt_dir):
-        os.makedirs(ckpt_dir)
+    model_dir = os.path.join(args.model_dir, version)
+    if not os.path.exists(model_dir):
+        os.makedirs(model_dir)
 
     # Save the model
-    model.save(ckpt_dir)
+    model.save(model_dir)
 
 
 def main(args):
@@ -114,19 +119,14 @@ def main(args):
     )
 
     # Split the training dataset into validation and training datasets
-    val_batches = tf.data.experimental.cardinality(train_ds)
-    train_ds = train_ds.take(val_batches // 5)
-    val_ds = train_ds.skip(val_batches // 5)
+    # val_batches = tf.data.experimental.cardinality(test_ds)
+    # test_ds = test_ds.take(val_batches // 5)
+    # val_ds = test_ds.skip(val_batches // 5)
 
     # Use prefetch to improve performance
     AUTOTUNE = tf.data.AUTOTUNE
     train_ds = train_ds.prefetch(buffer_size=AUTOTUNE)
-    val_ds = val_ds.prefetch(buffer_size=AUTOTUNE)
-    test_ds = test_ds.prefetch(buffer_size=AUTOTUNE)
-
-    # Use prefetch to improve performance
-    AUTOTUNE = tf.data.AUTOTUNE
-    train_ds = train_ds.prefetch(buffer_size=AUTOTUNE)
+    # val_ds = val_ds.prefetch(buffer_size=AUTOTUNE)
     test_ds = test_ds.prefetch(buffer_size=AUTOTUNE)
 
     # Create model
@@ -140,9 +140,6 @@ def main(args):
         learning_rate=args.learning_rate, beta_1=args.beta_1, beta_2=args.beta_2
     )
 
-    # Wrap the optimizer with wrap_optimizer so smdebug can find gradients to save
-    optimizer = hook.wrap_optimizer(optimizer)
-
     model.compile(
         optimizer=optimizer,
         loss=tf.keras.losses.BinaryCrossentropy(from_logits=True),
@@ -150,7 +147,7 @@ def main(args):
     )
 
     # Train the model
-    train_model(model, train_ds, val_ds, hook, args)
+    train_model(model, train_ds, hook, args)
 
     # Evaluate and save the model
     test(model, test_ds, hook, args)
@@ -161,8 +158,8 @@ if __name__ == "__main__":
 
     # Hyperparameters sent by the client are passed as command-line arguments to the script.
     parser.add_argument("--epochs", type=int, default=4)
-    parser.add_argument("--batch-size", type=int, default=64)
-    parser.add_argument("--learning-rate", type=float, default=0.001)
+    parser.add_argument("--batch_size", type=int, default=64)
+    parser.add_argument("--learning_rate", type=float, default=0.001)
     parser.add_argument("--beta_1", type=float, default=0.9)
     parser.add_argument("--beta_2", type=float, default=0.999)
 
