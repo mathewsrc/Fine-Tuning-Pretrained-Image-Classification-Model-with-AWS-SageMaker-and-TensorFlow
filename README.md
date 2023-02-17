@@ -1,3 +1,5 @@
+[![Github Actions](https://github.com/punkmic/Fine-Tuning-Pretrained-Image-Classification-Model-with-AWS-SageMaker-and-TensorFlow/actions/workflows/main.yml/badge.svg)](https://github.com/punkmic/Fine-Tuning-Pretrained-Image-Classification-Model-with-AWS-SageMaker-and-TensorFlow/actions/workflows/main.yml)
+
 # **Fine-Tuning Pretrained Image Classification Model with AWS SageMaker and TensorFlow**
 
 
