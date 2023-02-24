@@ -1,4 +1,4 @@
-[![Github Actions](https://github.com/punkmic/Fine-Tuning-Pretrained-Image-Classification-Model-with-AWS-SageMaker-and-TensorFlow/actions/workflows/main.yml/badge.svg)](https://github.com/punkmic/Fine-Tuning-Pretrained-Image-Classification-Model-with-AWS-SageMaker-and-TensorFlow/actions/workflows/main.yml)
+[![Github Actions](https://github.com/mathewsrc/Fine-Tuning-Pretrained-Image-Classification-Model-with-AWS-SageMaker-and-TensorFlow/actions/workflows/main.yml/badge.svg)](https://github.com/mathewsrc/Fine-Tuning-Pretrained-Image-Classification-Model-with-AWS-SageMaker-and-TensorFlow/actions/workflows/main.yml)
 
 # **Fine-Tuning Pretrained Image Classification Model with AWS SageMaker and TensorFlow**
 
@@ -17,7 +17,7 @@ Source: DALL-E
 
 <img src="https://user-images.githubusercontent.com/94936606/218553342-e0b3b855-6cc7-4ef2-a87f-0a24fe8b415c.jpg" width=90% height=90%>
 
-Note: model was trained and tested by using custom training and inference [scripts](https://github.com/punkmic/Fine-Tuning-Pretrained-Image-Classification-Model-with-AWS-SageMaker-and-TensorFlow/tree/master/scripts).
+Note: model was trained and tested by using custom training and inference [scripts](https://github.com/mathewsrc/Fine-Tuning-Pretrained-Image-Classification-Model-with-AWS-SageMaker-and-TensorFlow/tree/master/scripts).
 
 ## Project Features
 
@@ -156,7 +156,7 @@ Debugger and Profiler
 
 <img src="https://user-images.githubusercontent.com/94936606/218581708-d5db56a1-682c-4646-96e2-b7402ef6e75c.png" width=50% height=50%>
 
-For More details see: https://github.com/punkmic/Fine-Tuning-Pretrained-Image-Classification-Model-with-AWS-SageMaker-and-TensorFlow/blob/master/train_and_deploy.ipynb
+For More details see: https://github.com/mathewsrc/Fine-Tuning-Pretrained-Image-Classification-Model-with-AWS-SageMaker-and-TensorFlow/blob/master/train_and_deploy.ipynb
 
 ## References
 
