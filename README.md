@@ -137,11 +137,10 @@ Or with MakeFile make command
 make install
 ```
 
-## Model prediction
+## Model prediction: Prediction vs Actual
 
 <img src="https://user-images.githubusercontent.com/94936606/218544242-897c20d8-5575-4dc8-a74f-c0e258a221ec.PNG" width=50% height=50%>
 
-Prediction vs Actual
 
 
 Debugger and Profiler 
