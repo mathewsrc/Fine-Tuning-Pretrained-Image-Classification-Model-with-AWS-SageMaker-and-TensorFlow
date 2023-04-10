@@ -13,7 +13,7 @@ This project, uses Amazon Web Services (AWS) SageMaker and Tensorflow to fine-tu
 Source: DALL-E
 
 
-## Project pipeline
+## Project overview
 
 <img src="https://user-images.githubusercontent.com/94936606/218553342-e0b3b855-6cc7-4ef2-a87f-0a24fe8b415c.jpg" width=90% height=90%>
 
