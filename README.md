@@ -24,6 +24,10 @@ Note: model was trained and tested by using custom training and inference [scrip
 - AWS SageMaker
 - AWS SageMaker Debugger
 - Tensorflow Framework version 2.9
+- AWS S3
+- SageMaker Hyperparameter Tuning
+- SageMaker Endpoints
+- SageMaker Profiler
 
 ## Dataset
 
