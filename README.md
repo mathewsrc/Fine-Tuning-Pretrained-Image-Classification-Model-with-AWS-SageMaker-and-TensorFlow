@@ -147,7 +147,7 @@ make install
 
 
 
-Debugger and Profiler 
+Debugger and Profiler  outputs
 
 <img src="https://user-images.githubusercontent.com/94936606/218580803-80c429ab-3cb5-4a2a-8f59-e79f38e51891.png" width=50% height=50%>
 
